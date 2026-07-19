@@ -1,0 +1,21 @@
+{
+  "name": "cgaweb",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Canadian Gospel Artistes official website",
+  "scripts": {
+    "dev": "concurrently -n server,client -c orange,cyan \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "dev:client": "npm run dev --prefix client",
+    "dev:server": "npm run dev --prefix server",
+    "build": "npm run build --prefix client",
+    "start": "npm run start --prefix server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shalom6/CGAweb.git"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^10.0.3"
+  }
+}
