@@ -12,40 +12,99 @@ const fadeUp = {
 }
 
 function Nav({ ticketUrl }) {
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : ''
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [menuOpen])
+
+  function closeMenu() {
+    setMenuOpen(false)
+  }
+
   return (
-    <motion.header
-      className="nav"
-      initial={{ opacity: 0, y: -16 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-    >
-      <a href="#top" className="brand" aria-label="Canadian Gospel Artistes home">
-        <img
-          className="brand-mark"
-          src="/images/cga-logo.png"
-          alt="Canadian Gospel Artistes logo"
-          width="40"
-          height="40"
-        />
-        <span className="brand-text">
-          <strong>Canadian Gospel Artistes</strong>
-          <span>Official</span>
-        </span>
-      </a>
-      <nav className="nav-links" aria-label="Primary">
-        <a href="#concert">Concert</a>
-        <a href="#artists">Artistes</a>
-        <a href="#tickets">Tickets</a>
-      </nav>
-      <a
-        className="nav-cta"
-        href={ticketUrl}
-        target="_blank"
-        rel="noopener noreferrer"
+    <>
+      <div className="nav-shell">
+        <motion.header
+          className="nav"
+          initial={{ opacity: 0, y: -16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <a href="#top" className="brand" aria-label="Canadian Gospel Artistes home" onClick={closeMenu}>
+            <img
+              className="brand-mark"
+              src="/images/cga-logo.png"
+              alt="Canadian Gospel Artistes logo"
+              width="40"
+              height="40"
+            />
+            <span className="brand-text">
+              <strong>Canadian Gospel Artistes</strong>
+              <span>Official</span>
+            </span>
+          </a>
+
+          <nav className="nav-links" aria-label="Primary">
+            <a href="#concert">Concert</a>
+            <a href="#artists">Artistes</a>
+            <a href="#tickets">Tickets</a>
+          </nav>
+
+          <div className="nav-actions">
+            <a
+              className="nav-cta"
+              href={ticketUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Free Tickets
+            </a>
+            <button
+              type="button"
+              className={`nav-toggle${menuOpen ? ' is-open' : ''}`}
+              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={menuOpen}
+              aria-controls="mobile-nav"
+              onClick={() => setMenuOpen((open) => !open)}
+            >
+              <span />
+              <span />
+              <span />
+            </button>
+          </div>
+        </motion.header>
+      </div>
+
+      <div
+        className={`nav-backdrop${menuOpen ? ' is-open' : ''}`}
+        onClick={closeMenu}
+        aria-hidden={!menuOpen}
+      />
+
+      <nav
+        id="mobile-nav"
+        className={`mobile-nav${menuOpen ? ' is-open' : ''}`}
+        aria-label="Mobile"
+        aria-hidden={!menuOpen}
       >
-        Free Tickets
-      </a>
-    </motion.header>
+        <a href="#concert" onClick={closeMenu}>Concert</a>
+        <a href="#artists" onClick={closeMenu}>Artistes</a>
+        <a href="#tickets" onClick={closeMenu}>Tickets</a>
+        <a
+          className="nav-cta mobile-nav-cta"
+          href={ticketUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={closeMenu}
+        >
+          Free Tickets
+        </a>
+      </nav>
+    </>
   )
 }
 
@@ -253,7 +312,7 @@ function Footer() {
         <p>
           <strong>Canadian Gospel Artistes</strong> — presenting gospel excellence across Canada.
         </p>
-        <p>© {new Date().getFullYear()} CGA</p>
+        <p>© 2026 Canadian Gospel Artistes</p>
       </div>
     </footer>
   )

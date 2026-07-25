@@ -35,12 +35,14 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  min-height: 100dvh;
   background:
     radial-gradient(1200px 600px at 80% -10%, rgba(255, 77, 0, 0.18), transparent 55%),
     radial-gradient(900px 500px at 10% 20%, rgba(80, 40, 180, 0.22), transparent 50%),
