@@ -38,18 +38,12 @@
 }
 
 .brand-mark {
-  width: 2.1rem;
-  height: 2.1rem;
+  width: 2.45rem;
+  height: 2.45rem;
   border-radius: 50%;
-  display: grid;
-  place-items: center;
-  background: radial-gradient(circle at 30% 30%, #2a2a45, #0b0b12 70%);
-  border: 1.5px solid var(--orange);
-  color: var(--gold);
-  font-family: var(--font-display);
-  font-size: 0.78rem;
-  letter-spacing: 0.04em;
+  object-fit: cover;
   flex-shrink: 0;
+  box-shadow: 0 0 0 1px rgba(245, 197, 24, 0.35);
 }
 
 .brand-text {

@@ -20,7 +20,13 @@ function Nav({ ticketUrl }) {
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
     >
       <a href="#top" className="brand" aria-label="Canadian Gospel Artistes home">
-        <span className="brand-mark">CGA</span>
+        <img
+          className="brand-mark"
+          src="/images/cga-logo.png"
+          alt="Canadian Gospel Artistes logo"
+          width="40"
+          height="40"
+        />
         <span className="brand-text">
           <strong>Canadian Gospel Artistes</strong>
           <span>Official</span>
