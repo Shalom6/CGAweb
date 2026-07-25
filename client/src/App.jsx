@@ -11,7 +11,7 @@ const fadeUp = {
   }),
 }
 
-function Nav({ ticketUrl }) {
+function Nav() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
@@ -51,18 +51,10 @@ function Nav({ ticketUrl }) {
           <nav className="nav-links" aria-label="Primary">
             <a href="#concert">Concert</a>
             <a href="#artists">Artistes</a>
-            <a href="#tickets">Tickets</a>
+            <a href="#tickets">Free Tickets</a>
           </nav>
 
           <div className="nav-actions">
-            <a
-              className="nav-cta"
-              href={ticketUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Free Tickets
-            </a>
             <button
               type="button"
               className={`nav-toggle${menuOpen ? ' is-open' : ''}`}
@@ -93,16 +85,7 @@ function Nav({ ticketUrl }) {
       >
         <a href="#concert" onClick={closeMenu}>Concert</a>
         <a href="#artists" onClick={closeMenu}>Artistes</a>
-        <a href="#tickets" onClick={closeMenu}>Tickets</a>
-        <a
-          className="nav-cta mobile-nav-cta"
-          href={ticketUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={closeMenu}
-        >
-          Free Tickets
-        </a>
+        <a href="#tickets" onClick={closeMenu}>Free Tickets</a>
       </nav>
     </>
   )
@@ -380,7 +363,7 @@ export default function App() {
 
   return (
     <div className="site">
-      <Nav ticketUrl={event.ticketUrl} />
+      <Nav />
       <main>
         <Hero event={event} />
         <Concert event={event} />

@@ -21,6 +21,7 @@ const artists = [
   { name: 'Pst Anthony Aigbe', province: 'ON' },
   { name: 'Tolu Enaibe', province: 'AB' },
   { name: 'The Bamzes', province: 'SK' },
+  { name: 'The Bamzes', province: 'SK' },
   { name: 'Simply Gabriel', province: 'AB' },
   { name: 'Faith Aib', province: 'ON' },
   { name: 'Emmanuel Briggs', province: 'MB' },
