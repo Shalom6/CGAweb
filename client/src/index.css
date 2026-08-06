@@ -1,26 +1,7 @@
 :root {
-  --bg: #07070c;
-  --bg-elevated: #101018;
-  --ink: #f4f4f7;
-  --ink-muted: rgba(244, 244, 247, 0.72);
-  --ink-soft: rgba(244, 244, 247, 0.48);
-  --orange: #ff4d00;
-  --orange-hot: #ff6a1a;
-  --gold: #f5c518;
-  --navy: #12122a;
-  --line: rgba(255, 255, 255, 0.12);
-  --glass: rgba(20, 20, 32, 0.55);
-  --glass-strong: rgba(12, 12, 20, 0.72);
-  --shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
-  --radius-sm: 14px;
-  --radius-md: 22px;
-  --radius-pill: 999px;
-  --font-display: 'Anton', Impact, sans-serif;
-  --font-ui: 'Outfit', 'Segoe UI', sans-serif;
-  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-  color: var(--ink);
-  background: var(--bg);
-  font-family: var(--font-ui);
+  color: #3a4f66;
+  background: #fafbfc;
+  font-family: 'DM Sans', 'Segoe UI', sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -35,57 +16,19 @@
 
 html {
   scroll-behavior: smooth;
-  -webkit-text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  min-height: 100dvh;
-  background:
-    radial-gradient(1200px 600px at 80% -10%, rgba(255, 77, 0, 0.18), transparent 55%),
-    radial-gradient(900px 500px at 10% 20%, rgba(80, 40, 180, 0.22), transparent 50%),
-    linear-gradient(180deg, #090912 0%, #07070c 40%, #0a0a14 100%);
-  color: var(--ink);
-  overflow-x: hidden;
-}
-
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 72px 72px;
-  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.55), transparent 70%);
-  z-index: 0;
 }
 
 #root {
-  position: relative;
-  z-index: 1;
   min-height: 100vh;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button,
-input {
-  font: inherit;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
 ::selection {
-  background: rgba(255, 77, 0, 0.35);
-  color: #fff;
+  background: rgba(2, 84, 146, 0.2);
+  color: #192a3d;
 }

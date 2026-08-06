@@ -31,7 +31,7 @@ npm run dev
 2. Vercel uses `vercel.json`:
    - **Build Command:** `npm run build`
    - **Output Directory:** `client/dist`
-3. API routes live in `/api` as serverless functions (`/api/event`, `/api/artists`, etc.).
+3. API routes live in `/api` as serverless functions (`/api/site`, `/api/event`, `/api/artists`, etc.).
 4. Push to `main` and redeploy.
 
 ## Event
